@@ -286,7 +286,7 @@ modification depends on whether you updated your dependencies in order to fix
 a bug or introduce new functionality. I would usually expect additional code
 for the latter instance, in which case it's obviously a minor level increment.
 
-### E se eu sem querer alterar a API pública de uma maneira que não é compatível com a mudança do número de versão (o que quer dizer que o código incorretamente introduz uma mudança grande em um release de correção)
+### E se eu sem querer alterar a API pública de uma maneira que não é compatível com a mudança do número de versão (ou seja, que o código incorretamente introduz uma mudança grande em um release de correção)
 
 Use seu melhor julgamento. Se você tem uma audiência grande que será
 drasticamente impactada pela mudança de comportamento de volta para o

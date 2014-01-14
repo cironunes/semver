@@ -286,30 +286,32 @@ modification depends on whether you updated your dependencies in order to fix
 a bug or introduce new functionality. I would usually expect additional code
 for the latter instance, in which case it's obviously a minor level increment.
 
-### What if I inadvertently alter the public API in a way that is not compliant with the version number change (i.e. the code incorrectly introduces a major breaking change in a patch release)
+### E se eu sem querer alterar a API pública de uma maneira que não é compatível com a mudança do número de versão (ou seja, que o código incorretamente introduz uma mudança grande em um release de correção)
 
-Use your best judgment. If you have a huge audience that will be drastically
-impacted by changing the behavior back to what the public API intended, then
-it may be best to perform a major version release, even though the fix could
-strictly be considered a patch release. Remember, Semantic Versioning is all
-about conveying meaning by how the version number changes. If these changes
-are important to your users, use the version number to inform them.
+Use seu melhor julgamento. Se você tem uma audiência grande que será
+drasticamente impactada pela mudança de comportamento de volta para o
+que a API pública pretendia, então é melhor realizar um release maior,
+mesmo que o conserto poderia ser considerato estritamente um release de
+correção. Lembre-se que versionamento semântico é sobre dar significado
+sobre a maneira que o número de versão muda. Se essas mudanças são
+importantes para seus usuários, use o número de versão necessário para informá-los.
 
-### How should I handle deprecating functionality?
+### Como faço para deprecar funcionalidades?
 
-Deprecating existing functionality is a normal part of software development and
-is often required to make forward progress. When you deprecate part of your
-public API, you should do two things: (1) update your documentation to let
-users know about the change, (2) issue a new minor release with the deprecation
-in place. Before you completely remove the functionality in a new major release
-there should be at least one minor release that contains the deprecation so
-that users can smoothly transition to the new API.
+Deprecar uma funcionalidade extistente é uma parte comum no ciclo de 
+desenvolvimento de software e é normalmente uma medida necessária para se progredir.
+Quando você depreca parte da sua API pública, você deve fazer duas coisas: (1) atualizar
+sua documentação para deixar os usuários saberem da mudança, (2) lançar um novo
+release menor com a deprecação feita. Antes de você completamente remover a
+funcionalidade em um release maior deve existir pelo menos um release menor
+que contém a funcionalidade deprecada então os usuários poderão transicionar
+suavemente para a nova API.
 
-### Does SemVer have a size limit on the version string?
+### O SemVer tem um tamanho limite na string de versão?
 
-No, but use good judgment. A 255 character version string is probably overkill,
-for example. Also, specific systems may impose their own limits on the size of
-the string.
+Não, mas use um bom julgamento. Uma string de 255 caracteres é
+provavelmente mais do que necessário, por exemplo. E também, sistemas
+específicos podem impor seus próprios limites no tamanho da string.
 
 About
 -----

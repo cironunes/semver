@@ -1,52 +1,51 @@
-Semantic Versioning 2.0.0
+Versionamento Semântico 2.0.0
 ==============================
 
-Summary
+Sumário
 -------
 
-Given a version number MAJOR.MINOR.PATCH, increment the:
+Dado o número de uma versão MAJOR,MINOR,PATCH, incremente o:
 
-1. MAJOR version when you make incompatible API changes,
-1. MINOR version when you add functionality in a backwards-compatible
-   manner, and
-1. PATCH version when you make backwards-compatible bug fixes.
+1. MAJOR quando você fizer mudanças que trazem incompatibilidade na API
+2. MINOR quando você adicionar funcionalidade mantendo a compatibilidade com versões anteriores.
+3. PATCH quando você fizer bug fixes mantendo a compatibilidade com versões anteriores.
 
-Additional labels for pre-release and build metadata are available as extensions
-to the MAJOR.MINOR.PATCH format.
+Nomes adicionais para pre-releases e metadados de build estão disponíveis como extensões ao formato MAJOR.MINOR.PATCH.
 
-Introduction
+Introdução
 ------------
 
-In the world of software management there exists a dread place called
-"dependency hell." The bigger your system grows and the more packages you
-integrate into your software, the more likely you are to find yourself, one
-day, in this pit of despair.
+Em um mundo de gerenciamento de software existe um lugar pavoroso chamado
+“*dependency hell*”. Quanto mais seu sistema cresce e mais pacotes você
+integra no seu software, mais você vai se encontrar, um dia, neste poço de
+desespero.
 
-In systems with many dependencies, releasing new package versions can quickly
-become a nightmare. If the dependency specifications are too tight, you are in
-danger of version lock (the inability to upgrade a package without having to
-release new versions of every dependent package). If dependencies are
-specified too loosely, you will inevitably be bitten by version promiscuity
-(assuming compatibility with more future versions than is reasonable).
-Dependency hell is where you are when version lock and/or version promiscuity
-prevent you from easily and safely moving your project forward.
+Em sistemas com muitas dependências, lançar novas versões de pacotes podem
+rapidamente se tornar um pesadelo.	Se as especificações das dependências
+estiverem muito acopladas, você corre  perigo de *version lock*
+(impossibilidade de atualizar um pacote sem ter que lançar uma versão nova
+de cada pacote que é dependência). Se as dependências estiverem muito
+desacopladas, você vai inevitavelmente ser mordido pela promiscuidade de
+versão (assumindo compatibilidade com mais versões futuras do que o sensato).
+*Dependency hell* é onde você está quando o *version lock* e/ou a
+promiscuidade de versão não te deixam ir com o projeto adiante de forma fácil
+e segura.
 
-As a solution to this problem, I propose a simple set of rules and
-requirements that dictate how version numbers are assigned and incremented.
-These rules are based on but not necessarily limited to pre-existing
-widespread common practices in use in both closed and open-source software.
-For this system to work, you first need to declare a public API. This may
-consist of documentation or be enforced by the code itself. Regardless, it is
-important that this API be clear and precise. Once you identify your public
-API, you communicate changes to it with specific increments to your version
-number. Consider a version format of X.Y.Z (Major.Minor.Patch). Bug fixes not
-affecting the API increment the patch version, backwards compatible API
-additions/changes increment the minor version, and backwards incompatible API
-changes increment the major version.
+Como solução para este problema, eu proponho um simples conjunto de regras e
+requerimentos que ditam como os números de versão são atribuídos e
+incrementados. Estas regras são baseadas em, mas não necessariamente limitadas
+a práticas comuns já bastante difundidas, usadas em ambos, softwares fechados
+e open-source. Para este sistema funcionar, primeiro você precisa declarar uma
+API pública. A declaração pode ser feita via documentação ou no próprio código.
+Entretanto, é importante que a API seja limpa e precisa. Uma vez que
+você identifica o público da sua API, você comunica as mudanças dela com
+incrementos especificos ao seu número de versão. Considerando um formato de
+versão X.Y.Z (Major.Minor.Patch). Correções de bugs que não afetam a API incrementam
+o patch, adições/mudanças compativéis com as versões anteriores
+incrementam o minor e mudanças na API não compatíveis com as versões anterioes
+incrementam o major.
 
-I call this system "Semantic Versioning." Under this scheme, version numbers
-and the way they change convey meaning about the underlying code and what has
-been modified from one version to the next.
+Eu chamo este sistema de "Versionamento Semântico". Neste esquema, os números de versão e a forma que eles mudam transmitem o significado do código subjacente e o que foi modificado de uma versão para a próxima.
 
 
 Semantic Versioning Specification (SemVer)

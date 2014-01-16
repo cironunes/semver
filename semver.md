@@ -193,39 +193,41 @@ Backus–Naur Form Grammar for Valid SemVer Versions
                | "y" | "z"
 
 
-Why Use Semantic Versioning?
-----------------------------
+Por que usar o versionamento semântico?
+---------------------------------------
 
-This is not a new or revolutionary idea. In fact, you probably do something
-close to this already. The problem is that "close" isn't good enough. Without
-compliance to some sort of formal specification, version numbers are
-essentially useless for dependency management. By giving a name and clear
-definition to the above ideas, it becomes easy to communicate your intentions
-to the users of your software. Once these intentions are clear, flexible (but
-not too flexible) dependency specifications can finally be made.
+Esta não é uma idéia nova ou revolucionária. Na verdade, você provavelmente
+já faz algo parecido. O problema é que "parecido" não é bom o suficiente. Sem
+o cumprimento de algum tipo de especificação formal, o número de versões são
+praticamente inúteis para o gerenciamento de dependência. Ao dar um nome e uma
+definição clara para as idéias apresentadas acima, fica mais fácil de comunicar
+as suas intenções para os usuários de seu software. Uma vez que estas intenções
+sejam claras, a especificação das dependências podem finalmente ser flexível
+(mas  não tão flexível).
 
-A simple example will demonstrate how Semantic Versioning can make dependency
-hell a thing of the past. Consider a library called "Firetruck." It requires a
-Semantically Versioned package named "Ladder." At the time that Firetruck is
-created, Ladder is at version 3.1.0. Since Firetruck uses some functionality
-that was first introduced in 3.1.0, you can safely specify the Ladder
-dependency as greater than or equal to 3.1.0 but less than 4.0.0. Now, when
-Ladder version 3.1.1 and 3.2.0 become available, you can release them to your
-package management system and know that they will be compatible with existing
-dependent software.
+Um exemplo simples sobre o versionamento semântico pode demonstrar como aquela
+frustação de gerenciamento de dependência é coisa do passado. Considere uma
+biblioteca chamada "CarroDeBombeiro", a qual precisa de um pacote "Escada"
+versionado semanticamente. No momento em que é criado o CarroDeBombeiro, o
+pacote Escada está na versão 3.1.0. Um vez que CarroDeBombeiro utilize
+funcionalidades introduzidas em 3.1.0, você pode especificar a versão de Escada
+como maior ou igual a 3.1.0, e menor que 4.0.0 com uma certa segurança. Assim
+que a versão 3.1.1 e 3.2.0 de Escada estiver disponível, você pode usá-la no
+seu sistema de gerenciamento de pacotes e certificar que essas versões serão
+compatíveis com o software existente.
 
-As a responsible developer you will, of course, want to verify that any
-package upgrades function as advertised. The real world is a messy place;
-there's nothing we can do about that but be vigilant. What you can do is let
-Semantic Versioning provide you with a sane way to release and upgrade
-packages without having to roll new versions of dependent packages, saving you
-time and hassle.
+Como um desenvolvedor responsável, é claro que você vai querer verificar se
+todas as atualizações de pacotes funcionam como anunciado. O mundo real não é
+um lugar tão confiável, infelizmente não há nada que possamos fazer sobre isso,
+mas podemos pelo menos ser atentos. O que você pode fazer é deixar o
+Versionamento Semântico fornecer um caminho sensato para atualizar e lançar
+novos pacotes, sem ter que se enrolar em versões recentes, economizando tempo
+e evitando aborrecimentos.
 
-If all of this sounds desirable, all you need to do to start using Semantic
-Versioning is to declare that you are doing so and then follow the rules. Link
-to this website from your README so others know the rules and can benefit from
-them.
-
+Se tudo isso lhe parece conveniente, tudo que você precisa fazer para começar a
+usar o Versionamento Semântico é avisar que você está seguindo e respeitando as
+regras. Faça um link para esse site no README de seu projeto para que as outras
+pessoas saibam dessas regras e possam se beneficiar delas.
 
 FAQ
 ---

@@ -1,52 +1,51 @@
-Semantic Versioning 2.0.0
+Versionamento Semântico 2.0.0
 ==============================
 
-Summary
+Sumário
 -------
 
-Given a version number MAJOR.MINOR.PATCH, increment the:
+Dado o número de uma versão MAJOR,MINOR,PATCH, incremente o:
 
-1. MAJOR version when you make incompatible API changes,
-1. MINOR version when you add functionality in a backwards-compatible
-   manner, and
-1. PATCH version when you make backwards-compatible bug fixes.
+1. MAJOR quando você fizer mudanças que trazem incompatibilidade na API
+2. MINOR quando você adicionar funcionalidade mantendo a compatibilidade com versões anteriores.
+3. PATCH quando você fizer bug fixes mantendo a compatibilidade com versões anteriores.
 
-Additional labels for pre-release and build metadata are available as extensions
-to the MAJOR.MINOR.PATCH format.
+Nomes adicionais para pre-releases e metadados de build estão disponíveis como extensões ao formato MAJOR.MINOR.PATCH.
 
-Introduction
+Introdução
 ------------
 
-In the world of software management there exists a dread place called
-"dependency hell." The bigger your system grows and the more packages you
-integrate into your software, the more likely you are to find yourself, one
-day, in this pit of despair.
+Em um mundo de gerenciamento de software existe um lugar pavoroso chamado
+“*dependency hell*”. Quanto mais seu sistema cresce e mais pacotes você
+integra no seu software, mais você vai se encontrar, um dia, neste poço de
+desespero.
 
-In systems with many dependencies, releasing new package versions can quickly
-become a nightmare. If the dependency specifications are too tight, you are in
-danger of version lock (the inability to upgrade a package without having to
-release new versions of every dependent package). If dependencies are
-specified too loosely, you will inevitably be bitten by version promiscuity
-(assuming compatibility with more future versions than is reasonable).
-Dependency hell is where you are when version lock and/or version promiscuity
-prevent you from easily and safely moving your project forward.
+Em sistemas com muitas dependências, lançar novas versões de pacotes podem
+rapidamente se tornar um pesadelo.	Se as especificações das dependências
+estiverem muito acopladas, você corre  perigo de *version lock*
+(impossibilidade de atualizar um pacote sem ter que lançar uma versão nova
+de cada pacote que é dependência). Se as dependências estiverem muito
+desacopladas, você vai inevitavelmente ser mordido pela promiscuidade de
+versão (assumindo compatibilidade com mais versões futuras do que o sensato).
+*Dependency hell* é onde você está quando o *version lock* e/ou a
+promiscuidade de versão não te deixam ir com o projeto adiante de forma fácil
+e segura.
 
-As a solution to this problem, I propose a simple set of rules and
-requirements that dictate how version numbers are assigned and incremented.
-These rules are based on but not necessarily limited to pre-existing
-widespread common practices in use in both closed and open-source software.
-For this system to work, you first need to declare a public API. This may
-consist of documentation or be enforced by the code itself. Regardless, it is
-important that this API be clear and precise. Once you identify your public
-API, you communicate changes to it with specific increments to your version
-number. Consider a version format of X.Y.Z (Major.Minor.Patch). Bug fixes not
-affecting the API increment the patch version, backwards compatible API
-additions/changes increment the minor version, and backwards incompatible API
-changes increment the major version.
+Como solução para este problema, eu proponho um simples conjunto de regras e
+requerimentos que ditam como os números de versão são atribuídos e
+incrementados. Estas regras são baseadas em, mas não necessariamente limitadas
+a práticas comuns já bastante difundidas, usadas em ambos, softwares fechados
+e open-source. Para este sistema funcionar, primeiro você precisa declarar uma
+API pública. A declaração pode ser feita via documentação ou no próprio código.
+Entretanto, é importante que a API seja limpa e precisa. Uma vez que
+você identifica o público da sua API, você comunica as mudanças dela com
+incrementos especificos ao seu número de versão. Considerando um formato de
+versão X.Y.Z (Major.Minor.Patch). Correções de bugs que não afetam a API incrementam
+o patch, adições/mudanças compativéis com as versões anteriores
+incrementam o minor e mudanças na API não compatíveis com as versões anterioes
+incrementam o major.
 
-I call this system "Semantic Versioning." Under this scheme, version numbers
-and the way they change convey meaning about the underlying code and what has
-been modified from one version to the next.
+Eu chamo este sistema de "Versionamento Semântico". Neste esquema, os números de versão e a forma que eles mudam transmitem o significado do código subjacente e o que foi modificado de uma versão para a próxima.
 
 
 Semantic Versioning Specification (SemVer)
@@ -194,39 +193,41 @@ Backus–Naur Form Grammar for Valid SemVer Versions
                | "y" | "z"
 
 
-Why Use Semantic Versioning?
-----------------------------
+Por que usar o versionamento semântico?
+---------------------------------------
 
-This is not a new or revolutionary idea. In fact, you probably do something
-close to this already. The problem is that "close" isn't good enough. Without
-compliance to some sort of formal specification, version numbers are
-essentially useless for dependency management. By giving a name and clear
-definition to the above ideas, it becomes easy to communicate your intentions
-to the users of your software. Once these intentions are clear, flexible (but
-not too flexible) dependency specifications can finally be made.
+Esta não é uma idéia nova ou revolucionária. Na verdade, você provavelmente
+já faz algo parecido. O problema é que "parecido" não é bom o suficiente. Sem
+o cumprimento de algum tipo de especificação formal, o número de versões são
+praticamente inúteis para o gerenciamento de dependência. Ao dar um nome e uma
+definição clara para as idéias apresentadas acima, fica mais fácil de comunicar
+as suas intenções para os usuários de seu software. Uma vez que estas intenções
+sejam claras, a especificação das dependências podem finalmente ser flexível
+(mas  não tão flexível).
 
-A simple example will demonstrate how Semantic Versioning can make dependency
-hell a thing of the past. Consider a library called "Firetruck." It requires a
-Semantically Versioned package named "Ladder." At the time that Firetruck is
-created, Ladder is at version 3.1.0. Since Firetruck uses some functionality
-that was first introduced in 3.1.0, you can safely specify the Ladder
-dependency as greater than or equal to 3.1.0 but less than 4.0.0. Now, when
-Ladder version 3.1.1 and 3.2.0 become available, you can release them to your
-package management system and know that they will be compatible with existing
-dependent software.
+Um exemplo simples sobre o versionamento semântico pode demonstrar como aquela
+frustação de gerenciamento de dependência é coisa do passado. Considere uma
+biblioteca chamada "CarroDeBombeiro", a qual precisa de um pacote "Escada"
+versionado semanticamente. No momento em que é criado o CarroDeBombeiro, o
+pacote Escada está na versão 3.1.0. Um vez que CarroDeBombeiro utilize
+funcionalidades introduzidas em 3.1.0, você pode especificar a versão de Escada
+como maior ou igual a 3.1.0, e menor que 4.0.0 com uma certa segurança. Assim
+que a versão 3.1.1 e 3.2.0 de Escada estiver disponível, você pode usá-la no
+seu sistema de gerenciamento de pacotes e certificar que essas versões serão
+compatíveis com o software existente.
 
-As a responsible developer you will, of course, want to verify that any
-package upgrades function as advertised. The real world is a messy place;
-there's nothing we can do about that but be vigilant. What you can do is let
-Semantic Versioning provide you with a sane way to release and upgrade
-packages without having to roll new versions of dependent packages, saving you
-time and hassle.
+Como um desenvolvedor responsável, é claro que você vai querer verificar se
+todas as atualizações de pacotes funcionam como anunciado. O mundo real não é
+um lugar tão confiável, infelizmente não há nada que possamos fazer sobre isso,
+mas podemos pelo menos ser atentos. O que você pode fazer é deixar o
+Versionamento Semântico fornecer um caminho sensato para atualizar e lançar
+novos pacotes, sem ter que se enrolar em versões recentes, economizando tempo
+e evitando aborrecimentos.
 
-If all of this sounds desirable, all you need to do to start using Semantic
-Versioning is to declare that you are doing so and then follow the rules. Link
-to this website from your README so others know the rules and can benefit from
-them.
-
+Se tudo isso lhe parece conveniente, tudo que você precisa fazer para começar a
+usar o Versionamento Semântico é avisar que você está seguindo e respeitando as
+regras. Faça um link para esse site no README de seu projeto para que as outras
+pessoas saibam dessas regras e possam se beneficiar delas.
 
 FAQ
 ---
@@ -286,30 +287,32 @@ modification depends on whether you updated your dependencies in order to fix
 a bug or introduce new functionality. I would usually expect additional code
 for the latter instance, in which case it's obviously a minor level increment.
 
-### What if I inadvertently alter the public API in a way that is not compliant with the version number change (i.e. the code incorrectly introduces a major breaking change in a patch release)
+### E se eu sem querer alterar a API pública de uma maneira que não é compatível com a mudança do número de versão (ou seja, que o código incorretamente introduz uma mudança grande em um release de correção)
 
-Use your best judgment. If you have a huge audience that will be drastically
-impacted by changing the behavior back to what the public API intended, then
-it may be best to perform a major version release, even though the fix could
-strictly be considered a patch release. Remember, Semantic Versioning is all
-about conveying meaning by how the version number changes. If these changes
-are important to your users, use the version number to inform them.
+Use seu melhor julgamento. Se você tem uma audiência grande que será
+drasticamente impactada pela mudança de comportamento de volta para o
+que a API pública pretendia, então é melhor realizar um release maior,
+mesmo que o conserto poderia ser considerato estritamente um release de
+correção. Lembre-se que versionamento semântico é sobre dar significado
+sobre a maneira que o número de versão muda. Se essas mudanças são
+importantes para seus usuários, use o número de versão necessário para informá-los.
 
-### How should I handle deprecating functionality?
+### Como faço para depreciar funcionalidades?
 
-Deprecating existing functionality is a normal part of software development and
-is often required to make forward progress. When you deprecate part of your
-public API, you should do two things: (1) update your documentation to let
-users know about the change, (2) issue a new minor release with the deprecation
-in place. Before you completely remove the functionality in a new major release
-there should be at least one minor release that contains the deprecation so
-that users can smoothly transition to the new API.
+Depreciar uma funcionalidade extistente é uma parte comum no ciclo de
+desenvolvimento de software e é normalmente uma medida necessária para se progredir.
+Quando você depreca parte da sua API pública, você deve fazer duas coisas: (1) atualizar
+sua documentação para deixar os usuários saberem da mudança, (2) lançar um novo
+release menor com a deprecação feita. Antes de você completamente remover a
+funcionalidade em um release maior deve existir pelo menos um release menor
+que contém a funcionalidade deprecada então os usuários poderão transicionar
+suavemente para a nova API.
 
-### Does SemVer have a size limit on the version string?
+### O SemVer tem um tamanho limite na string de versão?
 
-No, but use good judgment. A 255 character version string is probably overkill,
-for example. Also, specific systems may impose their own limits on the size of
-the string.
+Não, mas use um bom julgamento. Uma string de 255 caracteres é
+provavelmente mais do que necessário, por exemplo. E também, sistemas
+específicos podem impor seus próprios limites no tamanho da string.
 
 About
 -----
